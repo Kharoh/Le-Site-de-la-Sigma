@@ -1,0 +1,44 @@
+{
+  "name": "le-site-de-la-sigma",
+  "version": "1.0.0",
+  "description": "Le Site officiel de la classe Sigma de la CPGE Ginette (Versailles), promo 2023.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kharoh/Le-Site-de-la-Sigma.git"
+  },
+  "keywords": [
+    "website",
+    "sigma",
+    "ginette"
+  ],
+  "author": "kharoh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kharoh/Le-Site-de-la-Sigma/issues"
+  },
+  "homepage": "https://github.com/Kharoh/Le-Site-de-la-Sigma#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.24",
+    "@types/react-dom": "^17.0.9",
+    "css-loader": "^6.3.0",
+    "file-loader": "^6.2.0",
+    "node-sass-glob-importer": "^5.3.2",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1.0",
+    "svg-url-loader": "^7.1.1",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.4.3",
+    "webpack": "^5.54.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.3.0",
+    "webpack-merge": "^5.8.0"
+  }
+}
