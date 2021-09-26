@@ -4,6 +4,7 @@
   "description": "Le Site officiel de la classe Sigma de la CPGE Ginette (Versailles), promo 2023.",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack serve --open --config config/webpack.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
