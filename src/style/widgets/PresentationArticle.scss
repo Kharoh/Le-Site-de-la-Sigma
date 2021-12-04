@@ -1,0 +1,33 @@
+.PresentationArticle {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+  --part-width: max(500px, 45vw);
+
+  .part {
+    img {
+      max-width: calc(var(--part-width)*0.8);
+      border-radius: calc(var(--part-width)*0.05) 0 calc(var(--part-width)*0.05) 0;
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 40px;
+    }
+  }
+  .right-part {
+    height: var(--section-height);
+    min-width: var(--part-width);
+
+    // align items in the center of the page
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .left-part {
+    height: var(--section-height);
+    min-width: var(--part-width);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

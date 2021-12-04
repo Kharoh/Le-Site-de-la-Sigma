@@ -4,6 +4,11 @@ font-family: 'Montserrat', sans-serif;
 font-family: 'Montserrat Alternates', sans-serif;
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+/*
+font-family: 'Libre Baskerville', serif;
+*/
+
 /* Declare the global css variables */
 :root {
   --dark-grey-color: #2e2e2e;
@@ -44,7 +49,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Libre Baskerville', serif;
   scroll-behavior: smooth;
 }
 
@@ -66,7 +71,7 @@ h6 {
 /* Text default styles */
 h1,
 h3 {
-  font-size: min(80px, 7vw);
+  font-size: min(75px, 7vw);
   font-weight: 600;
   font-style: italic;
 }
