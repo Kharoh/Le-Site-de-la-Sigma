@@ -2,32 +2,88 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  
-  --part-width: max(500px, 45vw);
 
-  .part {
-    img {
-      max-width: calc(var(--part-width)*0.8);
-      border-radius: calc(var(--part-width)*0.05) 0 calc(var(--part-width)*0.05) 0;
-      box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 40px;
-    }
-  }
+  --part-width: min(500px, 45vw);
+
   .right-part {
     height: var(--section-height);
-    min-width: var(--part-width);
+    max-width: var(--part-width);
+    margin-left: 50px;
 
     // align items in the center of the page
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .image-container {
+      align-self: flex-start;
+    }
+
+    .sub {
+      margin-top: 20px;
+      font-size: 20px;
+      font-style: italic;
+    }
   }
   .left-part {
     height: var(--section-height);
-    min-width: var(--part-width);
+    max-width: var(--part-width);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    .image-container {
+      align-self: flex-end;
+    }
+
+    .sub {
+      margin-top: 20px;
+      font-size: 20px;
+      font-style: italic;
+      text-align: end;
+    }
+  }
+
+  .image-container {
+    margin-top: 150px;
+    height: 500px;
+    min-width: min(700px, 45vw);
+
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 40px;
+    max-width: calc(var(--part-width) * 0.8);
+    border-radius: calc(var(--part-width) * 0.05) 0 calc(var(--part-width) * 0.05) 0;
+    overflow: hidden;
 
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  h6 {
+    margin-top: 150px;
+  }
+
+  h2 {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  p {
+    margin: 15px 0;
+  }
+
+  &.ginette {
+    h2 {
+      color: var(--brown-color);
+    }
+  }
+
+  &.sigma {
+    h2 {
+      color: var(--dark-grey-color);
+    }
   }
 }

@@ -4,7 +4,7 @@ font-family: 'Montserrat', sans-serif;
 font-family: 'Montserrat Alternates', sans-serif;
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
 /*
 font-family: 'Libre Baskerville', serif;
 */
@@ -49,7 +49,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
   scroll-behavior: smooth;
 }
 
@@ -73,7 +73,6 @@ h1,
 h3 {
   font-size: min(75px, 7vw);
   font-weight: 600;
-  font-style: italic;
 }
 
 h2 {
@@ -89,13 +88,13 @@ h4 {
 
 h5 {
   font-size: 25px;
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-style: italic;
 }
 
 h6 {
-  font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 15px;
   font-style: italic;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -116,7 +115,8 @@ p {
 
 .rainbow-text,
 .iron-text,
-.gold-text {
+.gold-text,
+.bronze-text {
   display: inline;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text !important;
@@ -135,4 +135,8 @@ p {
 
 .gold-text {
   background: linear-gradient(var(--gold-texture-gradient));
+}
+
+.bronze-text {
+  background: linear-gradient(var(--bronze-texture-gradient));
 }
