@@ -4,9 +4,25 @@ import { Assets, } from '../../../context'
 
 import NavButton from '../../widgets/NavButton'
 import PresentationArticle from '../../widgets/PresentationArticle'
+import Student from '../../widgets/Student'
 
 const HomePage = (props: HomePageProps) => {
   const assets = useContext(Assets)
+
+  /* Generate the student list and the students components to display */
+  const [studentNumber, setStudentNumber] = useState(3)
+  const shuffledStudentsList = Object.values(assets.students).sort(() => Math.random() - 0.5)
+  const studentsDisplayed: React.ReactNode[] = []
+
+  for (let i = 0; i < studentNumber; i++) {
+    const studentToDisplay = shuffledStudentsList[i]
+    studentsDisplayed.push(
+      <Student
+        key={studentToDisplay.firstName}
+        student={studentToDisplay}
+      />
+    )
+  }
 
   return (
     <div id="HomePage">
@@ -97,6 +113,9 @@ const HomePage = (props: HomePageProps) => {
       <section id="students-section">
         <h6>Ceux sans qui la sigma ne serait pas la sigma</h6>
         <h2>Les élèves</h2>
+        <div className="students">
+          {studentsDisplayed}
+        </div>
       </section>
       <section id="work-section"></section>
       <footer></footer>

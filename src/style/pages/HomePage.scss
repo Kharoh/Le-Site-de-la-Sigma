@@ -78,7 +78,7 @@
     }
 
     p {
-      width: 600px;
+      width: min(600px, 80vw);
       color: white;
       font-size: 20px;
       text-align: center;
@@ -164,6 +164,15 @@
       margin-top: 75px;
       max-width: 350px;
       text-align: center;
+    }
+
+    .students {
+      margin: 100px 0;
+      width: 85vw;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
   }
 
