@@ -4,6 +4,7 @@ export default {
   images: {
     photoDeClasse: require('./images/header.JPG').default,
     ginette: require('./images/terredh.jpg').default,
+    sigma: require('./images/sigma.jpg').default,
 
     jacques: require('./images/jacques.jpg').default,
     baptiste: require('./images/baptiste.jpg').default,
@@ -42,6 +43,50 @@ export default {
       firstName: "Jacques",
       desc: "Lorem ipsum dolor sit amet. Est ipsa laudantium ea galisum deserunt et distinctio corrupti. Sed exercitationem deleniti non enim voluptate ea iusto minus.",
       cds: []
+    }),
+    jean: new Student({
+      firstName: "Jean",
+      desc: "Lorem ipsum dolor sit amet. Est ipsa laudantium ea galisum deserunt et distinctio corrupti. Sed exercitationem deleniti non enim voluptate ea iusto minus.",
+      cds: [
+        {
+          color: "var(--pink-color)",
+          name: "CD Web",
+          link: ""
+        },
+      ]
+    }),
+    jules: new Student({
+      firstName: "Nadir",
+      desc: "Lorem ipsum dolor sit amet. Est ipsa laudantium ea galisum deserunt et distinctio corrupti. Sed exercitationem deleniti non enim voluptate ea iusto minus.",
+      cds: [
+        {
+          color: "var(--pink-color)",
+          name: "CD Web",
+          link: ""
+        },
+      ]
+    }),
+    nadir: new Student({
+      firstName: "Nadir",
+      desc: "Lorem ipsum dolor sit amet. Est ipsa laudantium ea galisum deserunt et distinctio corrupti. Sed exercitationem deleniti non enim voluptate ea iusto minus.",
+      cds: [
+        {
+          color: "var(--pink-color)",
+          name: "CD Web",
+          link: ""
+        },
+      ]
+    }),
+    thomas: new Student({
+      firstName: "Thomas",
+      desc: "Lorem ipsum dolor sit amet. Est ipsa laudantium ea galisum deserunt et distinctio corrupti. Sed exercitationem deleniti non enim voluptate ea iusto minus.",
+      cds: [
+        {
+          color: "var(--pink-color)",
+          name: "CD Web",
+          link: ""
+        },
+      ]
     })
   }
 } as const

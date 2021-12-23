@@ -11,10 +11,11 @@ const HomePage = (props: HomePageProps) => {
 
   /* Generate the student list and the students components to display */
   const [studentNumber, setStudentNumber] = useState(3)
-  const shuffledStudentsList = Object.values(assets.students).sort(() => Math.random() - 0.5)
+  const [shuffledStudentsList] = useState(Object.values(assets.students).sort(() => Math.random() - 0.5))
   const studentsDisplayed: React.ReactNode[] = []
 
   for (let i = 0; i < studentNumber; i++) {
+    if (i >= shuffledStudentsList.length) break
     const studentToDisplay = shuffledStudentsList[i]
     studentsDisplayed.push(
       <Student
@@ -71,16 +72,16 @@ const HomePage = (props: HomePageProps) => {
           className="sigma"
           leftPart={<>
             <div className="image-container">
-              <img src={assets.images.ginette} alt="Une belle image du bâtiment notre dame." />
+              <img src={assets.images.sigma} alt="Une belle image du bâtiment notre dame." />
             </div>
-            <div className="sub">Une photographie de notre classe complètement réunie.</div>
+            <div className="sub">Photographie d'une partie de notre classe en début d'année. On peut encore y observer nos jeunes têtes naïves dépourvues du futur maquillage prépa.</div>
           </>}
           rightPart={<>
             <h6>La classe</h6>
             <h2>La <span className="gold-text">Sigma</span></h2>
             <p><strong>Sigma</strong>, c'est le nom d'une lettre grecque, mais c'est aussi notre nom de classe.</p>
             <p>La bonne entente dans la classe entière est un pilier de <strong>l'esprit co</strong> qui anime Ginette.</p>
-            <p></p>
+            <p>Il faut encore écrire quelque chose ici, de préférence ce serait bien de parler de la classe pour remplir un peu le côté de l'image et que ce ne soit pas trop dépourvu en texte, merci.</p>
           </>}
         />
       </section>
@@ -96,16 +97,34 @@ const HomePage = (props: HomePageProps) => {
           <div className="tradition galanterie">
             <div className="inner">
               <h3>La galanterie</h3>
+              <p>
+                C'est un devoir à Ginette ! En MPSI nous n'avons pas la chance d'avoir une parité parfaite, c'est le moins qu'on puisse dire...
+                Et comme en Sigma on a les plus belles filles, on met un point d'honneur à être courtois, distingué et élégants avec elles !
+                Bref tu l'auras compris : la galanterie est une chose <strong>over importante</strong> à Ginette, et tout particulièrement en Sigma !
+              </p>
+              <h4>Adam, CD Gal</h4>
             </div>
           </div>
           <div className="tradition chant">
             <div className="inner">
               <h3>Le chant de pale</h3>
+              <p>
+                C'est un devoir à Ginette ! En MPSI nous n'avons pas la chance d'avoir une parité parfaite, c'est le moins qu'on puisse dire...
+                Et comme en Sigma on a les plus belles filles, on met un point d'honneur à être courtois, distingué et élégants avec elles !
+                Bref tu l'auras compris : la galanterie est une chose <strong>over importante</strong> à Ginette, et tout particulièrement en Sigma !
+              </p>
+              <h4>Malo, CD Cri</h4>
             </div>
           </div>
           <div className="tradition rock">
             <div className="inner">
               <h3>Danser le rock</h3>
+              <p>
+                C'est un devoir à Ginette ! En MPSI nous n'avons pas la chance d'avoir une parité parfaite, c'est le moins qu'on puisse dire...
+                Et comme en Sigma on a les plus belles filles, on met un point d'honneur à être courtois, distingué et élégants avec elles !
+                Bref tu l'auras compris : la galanterie est une chose <strong>over importante</strong> à Ginette, et tout particulièrement en Sigma !
+              </p>
+              <h4>Maria et Marin, CD Rock</h4>
             </div>
           </div>
         </div>
@@ -116,8 +135,12 @@ const HomePage = (props: HomePageProps) => {
         <div className="students">
           {studentsDisplayed}
         </div>
+        {studentNumber < shuffledStudentsList.length ? <div className="append" onClick={() => setStudentNumber(studentNumber + 3)}>Afficher plus</div> : ''}
       </section>
-      <section id="work-section"></section>
+      <section id="work-section">
+        <h6>Le vrai plaisir de la prépa</h6>
+        <h2>Le travail</h2>
+      </section>
       <footer></footer>
     </div>
   )
