@@ -117,6 +117,7 @@ p {
 .rainbow-text,
 .iron-text,
 .gold-text,
+.silver-text,
 .bronze-text {
   display: inline;
   -webkit-text-fill-color: transparent;
@@ -136,6 +137,10 @@ p {
 
 .gold-text {
   background: linear-gradient(var(--gold-texture-gradient));
+}
+
+.silver-text {
+  background: linear-gradient(var(--silver-texture-gradient));
 }
 
 .bronze-text {

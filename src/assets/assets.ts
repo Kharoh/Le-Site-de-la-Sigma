@@ -5,6 +5,12 @@ export default {
     photoDeClasse: require('./images/header.JPG').default,
     ginette: require('./images/terredh.jpg').default,
     sigma: require('./images/sigma.jpg').default,
+    omega: require('./images/omega.png').default,
+    phi: require('./images/phi.png').default,
+    psy: require('./images/psy.png').default,
+    iota: require('./images/iota.png').default,
+    alpha: require('./images/alpha.png').default,
+    lambda: require('./images/lambda.png').default,
 
     jacques: require('./images/jacques.jpg').default,
     baptiste: require('./images/baptiste.jpg').default,

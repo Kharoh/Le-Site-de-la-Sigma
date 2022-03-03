@@ -5,9 +5,13 @@ import { Assets, } from '../../../context'
 import NavButton from '../../widgets/NavButton'
 import PresentationArticle from '../../widgets/PresentationArticle'
 import Student from '../../widgets/Student'
+import SubjectArticle from '../../widgets/SubjectArticle'
 
 const HomePage = (props: HomePageProps) => {
   const assets = useContext(Assets)
+
+  /* If we need to display the glossary */
+  const [pageDisplayed, displayPage] = useState('normal')
 
   /* Generate the student list and the students components to display */
   const [studentNumber, setStudentNumber] = useState(3)
@@ -25,6 +29,131 @@ const HomePage = (props: HomePageProps) => {
     )
   }
 
+  if (pageDisplayed === 'glossaire') return (
+    <div id="HomePage">
+      <header>
+        <img src={assets.images.photoDeClasse} alt="La photo de classe." />
+      </header>
+      <div className="title">
+        <h1>Sigma</h1>
+        <p className="subtitle">MPSI 1 - depuis 1854</p>
+      </div>
+      <nav>
+        <div></div>
+        <NavButton
+          href="#presentation-section"
+          className="presentation"
+          onClick={() => displayPage('normal')}
+        >
+          La classe
+        </NavButton>
+        <NavButton
+          href="#students-section"
+          className="students"
+          onClick={() => displayPage('normal')}
+        >
+          Les élèves
+        </NavButton>
+        <NavButton
+          href="#work-section"
+          className="work"
+          onClick={() => displayPage('normal')}
+        >
+          Le travail
+        </NavButton>
+        <NavButton
+          href="#glossaire-section"
+          className="glossaire"
+          onClick={() => displayPage('glossaire')}
+        >
+          Le glossaire
+        </NavButton>
+      </nav>
+      <section id="glossaire-section"></section>
+      <footer>
+        <div className="made-by">
+          <p>
+            Ce site a été réalisé par les CD Web <span className="gold-text">Baptiste Callieux</span> et <span className="gold-text">Lucas Jung</span>
+          </p>
+        </div>
+        <div className="links">
+          <div className="utility">
+            <p className="title">Liens utiles</p>
+            <a href="https://www.bginette.com/" target="_blank"><p>Site de Ginette</p></a>
+            <a onClick={() => displayPage('normal')}><p>Glossaire</p></a>
+            <a onClick={() => displayPage('time')}><p>Emploi du temps</p></a>
+          </div>
+          <div className="classes">
+            <p className="title">Les autres classes</p>
+            <a href="http://www.taupe.bginette.net/"><p>Taupe</p></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+
+  if (pageDisplayed === 'time') return (
+    <div id="HomePage">
+      <header>
+        <img src={assets.images.photoDeClasse} alt="La photo de classe." />
+      </header>
+      <div className="title">
+        <h1>Sigma</h1>
+        <p className="subtitle">MPSI 1 - depuis 1854</p>
+      </div>
+      <nav>
+        <div></div>
+        <NavButton
+          href="#presentation-section"
+          className="presentation"
+          onClick={() => displayPage('normal')}
+        >
+          La classe
+        </NavButton>
+        <NavButton
+          href="#students-section"
+          className="students"
+          onClick={() => displayPage('normal')}
+        >
+          Les élèves
+        </NavButton>
+        <NavButton
+          href="#work-section"
+          className="work"
+          onClick={() => displayPage('normal')}
+        >
+          Le travail
+        </NavButton>
+        <NavButton
+          href="#glossaire-section"
+          className="glossaire"
+          onClick={() => displayPage('glossaire')}
+        >
+          Le glossaire
+        </NavButton>
+      </nav>
+      <section id="glossaire-section"></section>
+      <footer>
+        <div className="made-by">
+          <p>
+            Ce site a été réalisé par les CD Web <span className="gold-text">Baptiste Callieux</span> et <span className="gold-text">Lucas Jung</span>
+          </p>
+        </div>
+        <div className="links">
+          <div className="utility">
+            <p className="title">Liens utiles</p>
+            <a href="https://www.bginette.com/" target="_blank"><p>Site de Ginette</p></a>
+            <a onClick={() => displayPage('glossaire')}><p>Glossaire</p></a>
+            <a onClick={() => displayPage('normal')}><p>Emploi du temps</p></a>
+          </div>
+          <div className="classes">
+            <p className="title">Les autres classes</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+
   return (
     <div id="HomePage">
       <header>
@@ -36,16 +165,32 @@ const HomePage = (props: HomePageProps) => {
       </div>
       <nav>
         <div></div>
-        <NavButton href="#presentation-section" className="presentation">
+        <NavButton
+          href="#presentation-section"
+          className="presentation"
+          onClick={() => displayPage('normal')}
+        >
           La classe
         </NavButton>
-        <NavButton href="#students-section" className="students">
+        <NavButton
+          href="#students-section"
+          className="students"
+          onClick={() => displayPage('normal')}
+        >
           Les élèves
         </NavButton>
-        <NavButton href="#work-section" className="work">
+        <NavButton
+          href="#work-section"
+          className="work"
+          onClick={() => displayPage('normal')}
+        >
           Le travail
         </NavButton>
-        <NavButton href="#glossaire-section" className="glossaire">
+        <NavButton
+          href="#glossaire-section"
+          className="glossaire"
+          onClick={() => displayPage('glossaire')}
+        >
           Le glossaire
         </NavButton>
       </nav>
@@ -140,8 +285,118 @@ const HomePage = (props: HomePageProps) => {
       <section id="work-section">
         <h6>Le vrai plaisir de la prépa</h6>
         <h2>Le travail</h2>
+        <div className="subjects">
+          <SubjectArticle
+            className="maths"
+            type="left"
+            greekLetter={<img src={assets.images.omega} />}
+            title="Mathématiques"
+            titleType='gold'
+            desc={
+              <p>
+                Une grande partie de la vie à Ginette est guidée par les <span className="gold-text">traditions</span>.
+                Chaque année, les nouvelles promotions héritent de traditions ancestrales, certaines sont délirantes tandis que d'autres se fondent sur <span className="iron-text">d'excellents principes</span>.
+                Toutes ces traditions existent pour rendre l'expérience Ginette <span className="bronze-text">encore plus forte et agréable.</span>
+              </p>
+            }
+          />
+          <SubjectArticle
+            className="physics"
+            type="right"
+            greekLetter={<img src={assets.images.phi} />}
+            title="Physique"
+            titleType='gold'
+            desc={
+              <p>
+                Une grande partie de la vie à Ginette est guidée par les <span className="gold-text">traditions</span>.
+                Chaque année, les nouvelles promotions héritent de traditions ancestrales, certaines sont délirantes tandis que d'autres se fondent sur <span className="iron-text">d'excellents principes</span>.
+                Toutes ces traditions existent pour rendre l'expérience Ginette <span className="bronze-text">encore plus forte et agréable.</span>
+              </p>
+            }
+          />
+          <SubjectArticle
+            className="engineering"
+            type="left"
+            greekLetter={<img src={assets.images.psy} />}
+            title="S.I."
+            titleType='iron'
+            desc={
+              <p>
+                Une grande partie de la vie à Ginette est guidée par les <span className="gold-text">traditions</span>.
+                Chaque année, les nouvelles promotions héritent de traditions ancestrales, certaines sont délirantes tandis que d'autres se fondent sur <span className="iron-text">d'excellents principes</span>.
+                Toutes ces traditions existent pour rendre l'expérience Ginette <span className="bronze-text">encore plus forte et agréable.</span>
+              </p>
+            }
+          />
+          <SubjectArticle
+            className="informatic"
+            type="right"
+            greekLetter={<img src={assets.images.iota} />}
+            title="Informatique"
+            titleType='iron'
+            desc={
+              <p>
+                Une grande partie de la vie à Ginette est guidée par les <span className="gold-text">traditions</span>.
+                Chaque année, les nouvelles promotions héritent de traditions ancestrales, certaines sont délirantes tandis que d'autres se fondent sur <span className="iron-text">d'excellents principes</span>.
+                Toutes ces traditions existent pour rendre l'expérience Ginette <span className="bronze-text">encore plus forte et agréable.</span>
+              </p>
+            }
+          />
+          <SubjectArticle
+            className="french"
+            type="left"
+            greekLetter={<img src={assets.images.alpha} />}
+            title="Français"
+            titleType='bronze'
+            desc={
+              <p>
+                Une grande partie de la vie à Ginette est guidée par les <span className="gold-text">traditions</span>.
+                Chaque année, les nouvelles promotions héritent de traditions ancestrales, certaines sont délirantes tandis que d'autres se fondent sur <span className="iron-text">d'excellents principes</span>.
+                Toutes ces traditions existent pour rendre l'expérience Ginette <span className="bronze-text">encore plus forte et agréable.</span>
+              </p>
+            }
+          />
+          <SubjectArticle
+            className="sport"
+            type="right"
+            greekLetter={<img src={assets.images.lambda} />}
+            title="Sport"
+            titleType='bronze'
+            desc={
+              <p>
+                Une grande partie de la vie à Ginette est guidée par les <span className="gold-text">traditions</span>.
+                Chaque année, les nouvelles promotions héritent de traditions ancestrales, certaines sont délirantes tandis que d'autres se fondent sur <span className="iron-text">d'excellents principes</span>.
+                Toutes ces traditions existent pour rendre l'expérience Ginette <span className="bronze-text">encore plus forte et agréable.</span>
+              </p>
+            }
+          />
+        </div>
       </section>
-      <footer></footer>
+      <footer>
+        <div className="made-by">
+          <p>
+            Ce site a été réalisé par les CD Web <span className="gold-text">Baptiste Callieux</span> et <span className="gold-text">Lucas Jung</span>
+          </p>
+        </div>
+        <div className="links">
+          <div className="utility">
+            <p className="title">Liens utiles</p>
+            <a href="https://www.bginette.com/" target="_blank"><p>Site de Ginette</p></a>
+            <a onClick={() => displayPage('glossaire')}><p>Glossaire</p></a>
+            <a onClick={() => displayPage('time')}><p>Emploi du temps</p></a>
+          </div>
+          <div className="classes">
+            <p className="title">Les autres classes</p>
+            <div className="list">
+              <a href="http://www.taupe.bginette.net/"><p>Taupe</p></a>
+              <a href="http://www.taupe.bginette.net/"><p>Ellipse</p></a>
+              <a href="http://www.taupe.bginette.net/"><p>Atom</p></a>
+              <a href="http://www.taupe.bginette.net/"><p>Piston</p></a>
+              <a href="http://www.taupe.bginette.net/"><p>Agros</p></a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }

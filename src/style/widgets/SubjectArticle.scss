@@ -1,0 +1,50 @@
+.SubjectArticle {
+  height: 70vh;
+  width: 48%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &.left {
+    padding-right: 2%;
+    align-items: flex-end;
+    text-align: right;
+
+    .iron-text {
+      background: linear-gradient(105deg, #cacaca, #8f8f8f);
+    }
+  }
+
+  &.right {
+    padding-left: 2%;
+    align-items: flex-start;
+    text-align: left;
+
+    .gold-text {
+      background: linear-gradient(-85deg, #ffe572, #a29146);
+    }
+    .iron-text {
+      background: linear-gradient(-85deg, #cacaca, #8f8f8f);
+    }
+    .bronze-text {
+      background: linear-gradient(-85deg, #dfac6d, #715839);
+    }
+  }
+
+  .greek-letter {
+    img {
+      height: min(20vh, 10vw);
+    }
+  }
+
+  h3.subject-name {
+    font-size: min(65px, 6vw);
+  }
+
+  .desc {
+    width: 90%;
+  }
+  
+}
