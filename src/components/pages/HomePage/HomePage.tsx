@@ -6,6 +6,7 @@ import NavButton from '../../widgets/NavButton'
 import PresentationArticle from '../../widgets/PresentationArticle'
 import Student from '../../widgets/Student'
 import SubjectArticle from '../../widgets/SubjectArticle'
+import GlossaireWord from '../../widgets/GlossaireWord'
 
 const HomePage = (props: HomePageProps) => {
   const assets = useContext(Assets)
@@ -28,6 +29,10 @@ const HomePage = (props: HomePageProps) => {
       />
     )
   }
+
+  const wordsDisplayed: React.ReactNode[] = (assets.glossaire as unknown as { name: string, desc: string }[])
+    .sort((wordA, wordB) => wordA.name < wordB.name ? -1 : 1)
+    .map(word => <GlossaireWord key={word.name} name={word.name} desc={word.desc} />)
 
   if (pageDisplayed === 'glossaire') return (
     <div id="HomePage">
@@ -69,7 +74,9 @@ const HomePage = (props: HomePageProps) => {
           Le glossaire
         </NavButton>
       </nav>
-      <section id="glossaire-section"></section>
+      <section id="glossaire-section">
+        {wordsDisplayed}
+      </section>
       <footer>
         <div className="made-by">
           <p>
@@ -132,7 +139,9 @@ const HomePage = (props: HomePageProps) => {
           Le glossaire
         </NavButton>
       </nav>
-      <section id="glossaire-section"></section>
+      <section id="time-section">
+        {wordsDisplayed}
+      </section>
       <footer>
         <div className="made-by">
           <p>

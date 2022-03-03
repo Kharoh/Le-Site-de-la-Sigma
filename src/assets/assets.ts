@@ -94,5 +94,20 @@ export default {
         },
       ]
     })
-  }
+  },
+
+  glossaire: [
+    {
+      name: 'CD',
+      desc: "Il s'agit simplement de l'abréviation officielle de 'Chargé de'"
+    },
+    {
+      name: 'Ginette',
+      desc: "C'est le diminutif de Lycée Sainte-Geneviève bien-sûr !"
+    },
+    {
+      name: 'BJ',
+      desc: "Encore un mot pour désigner notre lycée, c'est l'abréviation de 'Boîte à Jèzes'"
+    },
+  ],
 } as const
